@@ -1,0 +1,50 @@
+# Build Folders (Contêm os binários e artefatos da build)
+bin/
+obj/
+
+# VS Code
+.vscode/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Auto-generated files
+*.log
+*.tlog
+*.log.diagnostics
+
+# NuGet
+*.nupkg
+packages/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Lock files
+project.lock.json
+project.fragment.lock.json
+
+# Web config files
+.vscode/
+.vs/
+
+# Publish folders
+.publish/
+out/
+
+# Entity Framework
+*.mdf
+*.ldf
+
+# DotNet Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Logs
+*.log
