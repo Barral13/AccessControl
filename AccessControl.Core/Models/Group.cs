@@ -16,6 +16,5 @@ public class Group
 
     public ICollection<Access> Accesses { get; set; } = new List<Access>();
 
-    [JsonIgnore]
     public ICollection<Subgroup> Subgroups { get; set; } = new List<Subgroup>();
 }

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace AccessControl.Core.Models;
+﻿namespace AccessControl.Core.Models;
 
 public class Subgroup
 {
