@@ -15,10 +15,17 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(cnnStr);
 });
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+        options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
+    });
+
 builder.Services.AddScoped<IDepartmentService, DepartmentService>();
 builder.Services.AddScoped<IGroupService, GroupService>();
 builder.Services.AddScoped<ISubgroupService, SubgroupService>();
+builder.Services.AddScoped<IPositionService, PositionService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
@@ -43,7 +50,7 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-app.UseRouting();
+app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 

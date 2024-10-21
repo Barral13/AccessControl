@@ -16,6 +16,14 @@ public class PositionMapping : IEntityTypeConfiguration<Position>
             .IsRequired()
             .HasColumnType("NVARCHAR(100)");
 
+        builder.Property(x => x.CreateDate)
+            .IsRequired()
+            .HasColumnType("DATETIME");
+
+        builder.Property(x => x.UpdateDate)
+            .IsRequired()
+            .HasColumnType("DATETIME");
+
         builder.HasMany(x => x.Employees)
             .WithOne(x => x.Position)
             .HasForeignKey(x => x.PositionId)

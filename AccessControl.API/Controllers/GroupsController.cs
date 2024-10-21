@@ -131,13 +131,12 @@ public class GroupsController(IGroupService groupService)
         try
         {
             var group = await groupService.GetGroupByIdAsync(id);
+
             if (group == null)
-            {
                 return NotFound(new Response<Department>(null, 404, "Grupo não encontrado."));
-            }
 
             await groupService.DeleteGroupAsync(id);
-            return Ok(new Response<Group>(group, 200, "Grupo deletado com sucesso!"));
+            return Ok(new Response<Group>(group, 200, "Grupo deletado com sucesso."));
         }
         catch (Exception ex)
         {
