@@ -77,7 +77,7 @@ public class PositionsController(IPositionService positionService)
             var position = await positionService.GetPositionByIdAsync(id);
 
             if (position == null)
-                return NotFound(new Response<Position>(null, 404, "Cargo(position não encontrada)"));
+                return NotFound(new Response<Position>(null, 404, "Cargo(position) não encontrada."));
 
             return Ok(new Response<Position>(position, 200, $"Cargo(position) encontrado: {position.Name}"));
         }
