@@ -8,7 +8,7 @@ public interface IRoleService
 {
    Task<Role?> CreateRoleAsync(Role role);
    Task<PagedResponse<IEnumerable<Role>>> GetAllRolesAsync(PagedRequest pagedRequest);
-   Task<Role?> GetRoleById(int id);
+   Task<Role?> GetRoleByIdAsync(int id);
    Task<Role?> UpdateRoleAsync(Role role);
    Task<Role?> DeleteRoleAsync(int id);
 }
