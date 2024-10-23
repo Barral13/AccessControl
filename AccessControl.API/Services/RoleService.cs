@@ -22,6 +22,7 @@ public class RoleService(AppDbContext context) : IRoleService
       return role;
    }
 
+
    public async Task<PagedResponse<IEnumerable<Role>>> GetAllRolesAsync(PagedRequest request)
    {
       var query = context.Roles
@@ -42,11 +43,13 @@ public class RoleService(AppDbContext context) : IRoleService
          totalCount);
    }
 
+
    public async Task<Role?> GetRoleByIdAsync(int id)
    {
       var role = await context.Roles.FirstOrDefaultAsync(x => x.Id == id);
       return role;
    }
+
 
    public async Task<Role?> UpdateRoleAsync(Role role)
    {
@@ -60,6 +63,7 @@ public class RoleService(AppDbContext context) : IRoleService
       await context.SaveChangesAsync();
       return role;
    }
+
 
    public async Task<Role?> DeleteRoleAsync(int id)
    {

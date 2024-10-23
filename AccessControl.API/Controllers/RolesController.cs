@@ -68,6 +68,7 @@ public class RolesController(IRoleService roleService)
       }
    }
 
+
    [HttpGet("{id}")]
    public async Task<ActionResult<Response<Role>>> GetRoleById(int id)
    {
@@ -86,6 +87,7 @@ public class RolesController(IRoleService roleService)
          return StatusCode(response.Code, response);
       }
    }
+
 
    [HttpDelete("{id}")]
    public async Task<ActionResult<Response<Role>>> DeleteDepartment(int id)
