@@ -9,7 +9,7 @@ namespace AccessControl.API.Controllers;
 
 [ApiController]
 [Route("v1/departments")]
-public class DepartmentController(IDepartmentService departmentService)
+public class DepartmentsController(IDepartmentService departmentService)
     : ControllerBase
 {
     [HttpPost]

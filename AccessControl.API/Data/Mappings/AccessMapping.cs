@@ -21,12 +21,9 @@ public class AccessMapping : IEntityTypeConfiguration<Access>
             .IsRequired()
             .HasColumnType("NVARCHAR(255)");
 
-        builder.Property(x => x.Type)
+        builder.Property(x => x.AccessType)
             .IsRequired()
-            .HasConversion(
-                v => v.ToString(),
-                v => Enum.Parse<EAccessType>(v))
-            .HasColumnType("NVARCHAR(50)");
+            .HasColumnType("NVARCHAR(100)");
 
         builder.Property(x => x.CreateDate)
             .IsRequired()

@@ -16,7 +16,7 @@ public class FunctionsController(IFunctionService functionService)
     public async Task<ActionResult<Response<Function>>> CreateFunction(FunctionDTO functionDTO)
     {
         if (!ModelState.IsValid)
-            return BadRequest(new Response<Function>(null, 500, "Dados inválidos."));
+            return BadRequest(new Response<Role>(null, 400, "Dados inválidos."));
 
         var function = new Function
         {

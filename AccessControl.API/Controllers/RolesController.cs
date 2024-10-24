@@ -19,7 +19,7 @@ public class RolesController(IRoleService roleService)
     public async Task<ActionResult<Response<Role>>> CreateRole(RoleDTO roleDTO)
     {
         if (!ModelState.IsValid)
-            return BadRequest(new Response<Role>(null, 404, "Dados inválidos."));
+            return BadRequest(new Response<Role>(null, 400, "Dados inválidos."));
 
         var slug = roleDTO.RoleType
           .ToLower()
