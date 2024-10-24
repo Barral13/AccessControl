@@ -21,8 +21,8 @@ public class RoleMapping : IEntityTypeConfiguration<Role>
             .HasColumnType("VARCHAR(120)");
 
         builder
-            .HasIndex(x => x.slug, "IX_Role_Slug")
-            .IsUnique();
+           .HasIndex(x => x.Slug, "IX_Role_Slug") // Corrigido para 'Slug'
+           .IsUnique();
 
         builder.Property(x => x.CreateDate)
             .IsRequired()
