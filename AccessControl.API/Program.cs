@@ -26,6 +26,9 @@ builder.Services.AddScoped<IDepartmentService, DepartmentService>();
 builder.Services.AddScoped<IGroupService, GroupService>();
 builder.Services.AddScoped<ISubgroupService, SubgroupService>();
 builder.Services.AddScoped<IPositionService, PositionService>();
+builder.Services.AddScoped<IFunctionService, FunctionService>();
+builder.Services.AddScoped<IRoleService, RoleService>();
+builder.Services.AddScoped<IAccessService, AccessService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>

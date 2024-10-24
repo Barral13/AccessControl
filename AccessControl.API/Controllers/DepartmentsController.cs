@@ -9,7 +9,7 @@ namespace AccessControl.API.Controllers;
 
 [ApiController]
 [Route("v1/departments")]
-public class DepartmentController(IDepartmentService departmentService)
+public class DepartmentsController(IDepartmentService departmentService)
     : ControllerBase
 {
     [HttpPost]
@@ -33,11 +33,7 @@ public class DepartmentController(IDepartmentService departmentService)
             if (createdDepartment == null)
                 return BadRequest(new Response<Department>(null, 400, "Já existe um departamento com esse nome."));
 
-            return CreatedAtAction(
-                nameof(GetDepartmentById),
-                new { id = createdDepartment.Id },
-                new Response<Department>(createdDepartment, 201, "Departamento criado com sucesso!")
-            );
+            return Ok(new Response<Department>(createdDepartment, 201, "Departamento criada com sucesso."));
         }
         catch (Exception ex)
         {
